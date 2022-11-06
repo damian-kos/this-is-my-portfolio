@@ -23,7 +23,7 @@ class Project(db.Model):
 # with app.app_context():
 #     db.create_all()
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/')
 def home():
     # Gets all projects from projects table
     projects = Project.query.all()
