@@ -1,0 +1,49 @@
+{% include "header.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Damian Portfolio</title>
+    <link href="{{ url_for('static', filename='css/template.css') }}" rel="stylesheet">
+</head>
+<body>
+    <section id="title">
+        <div class="top-contatiner">
+            <div class="inner-top-container">
+                <a class="welcome-text" >HI.</a>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="middle-container">
+            {% for project in projects %}
+          <div class="card">
+            <div class="card-image">
+              <img class="" src="{{ url_for('static', filename='images/' + project.title|lower + '.png') }}" alt="">
+            </div>
+            <div class="card-content">
+              <div class="card-text">
+                <div class="card-title">
+                {{ project.title }}
+                </div>
+                <div class="card-subtitle">
+                {{ project.subtitle}}
+                </div>
+                <div class="card-sentence">
+                  {{ project.description }}<br>
+                  {{ project.technologies }}
+                </div>
+                <div class="card-buttons">
+                  <a class="card-button" href="#">See more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+
+</body>
+</html>

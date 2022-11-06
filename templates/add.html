@@ -1,0 +1,36 @@
+
+{% include "header.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add project</title>
+</head>
+<body>
+    
+    <section id="title">
+        <div class="top-contatiner">
+            <div class="inner-top-container">
+                <form method="POST" action="/add">
+
+                    {{ form.project_title.label }} <br>{{ form.project_title(size=40) }}<br>
+                    {{ form.subtitle.label }} <br>{{ form.subtitle(size=40) }}<br>
+                    {{ form.description.label }} <br>{{ form.description(size=40) }}<br>
+                    {{ form.technologies.label }} <br>{{ form.technologies(size=40) }}<br>
+                    {{ form.link.label }} <br>{{ form.link(size=40) }}<br>
+                    <input type="submit" value="Submit project">
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+</html>
+{% endblock %}
