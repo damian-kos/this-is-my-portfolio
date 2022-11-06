@@ -29,7 +29,7 @@ def home():
     projects = Project.query.all()
     return render_template("index.html", projects=projects)
 
-# # Create new Project in database
+# # giCreate new Project in database
 # @app.route('/add', methods=["GET", "POST"])
 # def add():
 #     form = CreatePostForm()
