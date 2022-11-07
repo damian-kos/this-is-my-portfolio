@@ -16,14 +16,20 @@ body {
   background-color: #222831;
   font-family: 'Ubuntu', sans-serif;
   color: #fff;
+  margin: auto;
 }
 
 /* Top-contatiner */
 
 .top-container {
   padding: 3% 15%;
-  margin: 0;
+  margin: auto;
 
+}
+
+.im-so-sorry  {
+  width:100%;
+  text-align: center;
 }
 
 /* Add-form */

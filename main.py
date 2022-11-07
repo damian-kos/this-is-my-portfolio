@@ -29,22 +29,22 @@ def home():
     projects = Project.query.all()
     return render_template("index.html", projects=projects)
 
-# # giCreate new Project in database
-# @app.route('/add', methods=["GET", "POST"])
-# def add():
-#     form = CreatePostForm()
-#     if request.method == "POST":
-#         new_project = Project(
-#             title=request.form.get("project_title"),
-#             subtitle = request.form.get("subtitle"),
-#             description = request.form.get("description"),
-#             technologies = request.form.get("technologies"),
-#             link = request.form.get("link")
-#           )
-#         db.session.add(new_project)
-#         db.session.commit()
-#         return redirect(url_for("home"))
-#     return render_template("add.html", form=form)
+# giCreate new Project in database
+@app.route('/add', methods=["GET", "POST"])
+def add():
+    form = CreatePostForm()
+    if request.method == "POST":
+        new_project = Project(
+            title=request.form.get("project_title"),
+            subtitle = request.form.get("subtitle"),
+            description = request.form.get("description"),
+            technologies = request.form.get("technologies"),
+            link = request.form.get("link")
+          )
+        db.session.add(new_project)
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("add.html", form=form)
 
 
 
